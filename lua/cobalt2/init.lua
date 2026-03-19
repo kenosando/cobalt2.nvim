@@ -2,12 +2,12 @@ local M = {}
 
 local colors = {
   bg = "#193549",
-  fg = "#e1efff",
+  fg = "#ffffff",
   comment = "#0088ff",
   cyan = "#9effff",
   yellow = "#ffc600",
   orange = "#ff9d00",
-  pink = "#ff9c1c",
+  pink = "#ff628c",
   green = "#a5ff90",
   blue = "#0088ff",
   magenta = "#fb94ff",

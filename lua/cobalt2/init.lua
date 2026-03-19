@@ -3,12 +3,12 @@ local M = {}
 local colors = {
   bg = "#193549",
   fg = "#ffffff",
-  comment = "#0088ff",
+  comment = "#003146",
   cyan = "#9effff",
   yellow = "#ffc600",
   orange = "#ff9d00",
   pink = "#ff628c",
-  green = "#a5ff90",
+  green = "#ccff99",
   blue = "#0088ff",
   magenta = "#fb94ff",
   light = "#e1efff",
@@ -37,7 +37,8 @@ function M.setup()
   hl("StatusLine", { fg = colors.fg, bg = colors.blue })
   hl("StatusLineNC", { fg = colors.grey, bg = colors.bg })
   hl("TabLine", { fg = colors.grey, bg = colors.bg })
-  hl("TabLineSel", { fg = colors.fg, bg = colors.blue, bold = true })
+  hl("TabLineSel", { fg = colors.fg, bg = colors.line, bold = true })
+  hl("TabLineFill", { fg = colors.grey, bg = colors.blue })
   hl("VertSplit", { fg = colors.line, bg = colors.bg })
   hl("LineNr", { fg = colors.grey, bg = colors.bg })
   hl("CursorLineNr", { fg = colors.yellow, bg = colors.line, bold = true })
@@ -46,7 +47,7 @@ function M.setup()
   hl("PmenuSel", { fg = colors.bg, bg = colors.yellow })
 
   -- Syntax
-  hl("Comment", { fg = colors.line, italic = true })
+  hl("Comment", { fg = colors.comment, italic = true })
   hl("Constant", { fg = colors.pink })
   hl("String", { fg = colors.green })
   hl("Identifier", { fg = colors.light })
@@ -63,12 +64,13 @@ function M.setup()
   hl("Argument", { fg = colors.light })
 
   -- Extra highlights to better match VS Code tokenization
-  hl("Punctuation", { fg = colors.orange })
-  hl("Delimiter", { fg = colors.orange })
-  hl("Bracket", { fg = colors.orange })
-  hl("TSPunctDelimiter", { fg = colors.orange })
-  hl("TSPunctBracket", { fg = colors.orange })
-  hl("TSPunct", { fg = colors.orange })
+  -- Punctuation/brackets in pink for better visibility
+  hl("Punctuation", { fg = colors.pink })
+  hl("Delimiter", { fg = colors.pink })
+  hl("Bracket", { fg = colors.pink })
+  hl("TSPunctDelimiter", { fg = colors.pink })
+  hl("TSPunctBracket", { fg = colors.pink })
+  hl("TSPunct", { fg = colors.pink })
 
   -- Parameter / argument highlights (treesitter and generic)
   hl("Parameter", { fg = colors.light })
@@ -82,7 +84,26 @@ function M.setup()
   hl("TSVariableBuiltin", { fg = colors.pink })
 
   -- Treesitter comment group (darker)
-  hl("TSComment", { fg = colors.line, italic = true })
+  hl("TSComment", { fg = colors.comment, italic = true })
+
+  -- Make `local` and other keywords match function color (yellow)
+  hl("Keyword", { fg = colors.yellow })
+  hl("TSKeyword", { fg = colors.yellow })
+  hl("StorageClass", { fg = colors.yellow })
+
+  -- Class properties should be orange
+  hl("Property", { fg = colors.orange })
+  hl("TSProperty", { fg = colors.orange })
+
+  -- Booleans darker red/pink
+  hl("Boolean", { fg = "#A22929" })
+
+  -- Brighter strings
+  hl("String", { fg = colors.green })
+
+  -- Treesitter function / keyword / operator mappings
+  hl("TSFunction", { fg = colors.yellow })
+  hl("TSOperator", { fg = colors.orange })
 
   -- Treesitter function / keyword mappings
   hl("TSFunction", { fg = colors.yellow })

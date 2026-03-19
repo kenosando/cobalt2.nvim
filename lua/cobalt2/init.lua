@@ -1,6 +1,7 @@
 local M = {}
 
 local colors = {
+  dark_bg = "#122738",
   bg = "#193549",
   fg = "#ffffff",
   comment = "#003146",
@@ -36,8 +37,8 @@ function M.setup()
   -- UI
   hl("StatusLine", { fg = colors.fg, bg = colors.blue })
   hl("StatusLineNC", { fg = colors.grey, bg = colors.bg })
-  hl("TabLine", { fg = colors.grey, bg = colors.bg })
-  hl("TabLineSel", { fg = colors.fg, bg = colors.line, bold = true })
+  hl("TabLine", { fg = colors.grey, bg = colors.dark_bg })
+  hl("TabLineSel", { fg = colors.fg, bg = colors.bg, bold = true })
   hl("TabLineFill", { fg = colors.grey, bg = colors.blue })
   hl("VertSplit", { fg = colors.line, bg = colors.bg })
   hl("LineNr", { fg = colors.grey, bg = colors.bg })

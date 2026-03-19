@@ -46,7 +46,7 @@ function M.setup()
   hl("PmenuSel", { fg = colors.bg, bg = colors.yellow })
 
   -- Syntax
-  hl("Comment", { fg = colors.comment, italic = true })
+  hl("Comment", { fg = colors.line, italic = true })
   hl("Constant", { fg = colors.pink })
   hl("String", { fg = colors.green })
   hl("Identifier", { fg = colors.light })
@@ -63,9 +63,12 @@ function M.setup()
   hl("Argument", { fg = colors.light })
 
   -- Extra highlights to better match VS Code tokenization
-  hl("Punctuation", { fg = colors.line })
-  hl("Delimiter", { fg = colors.line })
-  hl("Bracket", { fg = colors.line })
+  hl("Punctuation", { fg = colors.orange })
+  hl("Delimiter", { fg = colors.orange })
+  hl("Bracket", { fg = colors.orange })
+  hl("TSPunctDelimiter", { fg = colors.orange })
+  hl("TSPunctBracket", { fg = colors.orange })
+  hl("TSPunct", { fg = colors.orange })
 
   -- Parameter / argument highlights (treesitter and generic)
   hl("Parameter", { fg = colors.light })
@@ -78,8 +81,13 @@ function M.setup()
   hl("TSVariable", { fg = colors.light })
   hl("TSVariableBuiltin", { fg = colors.pink })
 
-  -- Treesitter comment group
-  hl("TSComment", { fg = colors.comment, italic = true })
+  -- Treesitter comment group (darker)
+  hl("TSComment", { fg = colors.line, italic = true })
+
+  -- Treesitter function / keyword mappings
+  hl("TSFunction", { fg = colors.yellow })
+  hl("TSKeyword", { fg = colors.orange })
+  hl("TSOperator", { fg = colors.orange })
 
   -- Git signs
   hl("DiffAdd", { fg = colors.green })

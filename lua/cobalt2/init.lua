@@ -37,7 +37,7 @@ function M.setup()
   hl("StatusLine", { fg = colors.fg, bg = colors.blue })
   hl("StatusLineNC", { fg = colors.grey, bg = colors.bg })
   hl("TabLine", { fg = colors.grey, bg = colors.bg })
-  hl("TabLineSel", { fg = colors.fg, bg = colors.line })
+  hl("TabLineSel", { fg = colors.fg, bg = colors.blue, bold = true })
   hl("VertSplit", { fg = colors.line, bg = colors.bg })
   hl("LineNr", { fg = colors.grey, bg = colors.bg })
   hl("CursorLineNr", { fg = colors.yellow, bg = colors.line, bold = true })
@@ -57,6 +57,29 @@ function M.setup()
   hl("Underlined", { underline = true })
   hl("Error", { fg = colors.pink, bg = "#A22929" })
   hl("Todo", { fg = colors.black, bg = colors.yellow })
+  hl("Operator", { fg = colors.orange })
+  hl("Keyword", { fg = colors.orange })
+  hl("PreProc", { fg = colors.cyan })
+  hl("Argument", { fg = colors.light })
+
+  -- Extra highlights to better match VS Code tokenization
+  hl("Punctuation", { fg = colors.line })
+  hl("Delimiter", { fg = colors.line })
+  hl("Bracket", { fg = colors.line })
+
+  -- Parameter / argument highlights (treesitter and generic)
+  hl("Parameter", { fg = colors.light })
+  hl("TSParameter", { fg = colors.light })
+  hl("TSParameterReference", { fg = colors.light })
+
+  -- Make `self` and common variable names more visible (Python / treesitter)
+  hl("pythonSelf", { fg = colors.light, italic = true })
+  hl("Variable", { fg = colors.light })
+  hl("TSVariable", { fg = colors.light })
+  hl("TSVariableBuiltin", { fg = colors.pink })
+
+  -- Treesitter comment group
+  hl("TSComment", { fg = colors.comment, italic = true })
 
   -- Git signs
   hl("DiffAdd", { fg = colors.green })
